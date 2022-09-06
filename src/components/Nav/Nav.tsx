@@ -3,7 +3,7 @@ import { Box, Link } from "@mui/material";
 // Components
 import { PrimaryButton } from "../Buttons/Buttons";
 
-import React, { useState, useRef, useContext } from "react";
+import React, { useContext } from "react";
 
 import  {
   AddressBookContext,
