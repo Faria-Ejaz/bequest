@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import { ToastContainer } from 'react-toastify';
+// Components
+import Nav from "./components/Nav/Nav";
+import { DialogBox } from "./components/DialogBox/DialogBox";
+import HeaderPanel from "./components/HeaderPanel/HeaderPanel";
+import AddressBook from "./components/AddressBook/AddressBook";
+import SearchPostcode from "./components/SearchPostcode/SearchPostcode";
+// Context
+import AddressBookContextProvider from "./context/AddressBookContext";
+
+import "./App.css";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AddressBookContextProvider>
+      <DialogBox />
+      <ToastContainer />
+      <Nav />
+      <HeaderPanel />
+      <Box bgcolor={"white"} margin={"0 10%"} sx={{ width: "md" }}>
+        <SearchPostcode />
+        <AddressBook />
+      </Box>
+    </AddressBookContextProvider>
   );
 }
 
